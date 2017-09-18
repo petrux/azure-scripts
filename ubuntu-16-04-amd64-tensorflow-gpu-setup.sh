@@ -8,6 +8,7 @@ echo 'setting up '$(hostname)
 # NOTA: looks like Ubuntu VM in Azure have some problems
 # with locale out-of-the-box.
 echo 'export LC_ALL=C' >> ~/.bashrc
+source ~/.bashrc
 
 # Install the Azure CLI 2.0 (via apt-get)
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
@@ -45,4 +46,4 @@ echo 'setting up tensorflow (for GPU) 1.2.0'
 sudo pip install tensorflow-gpu==1.2.0
 
 # Setup complete.
-echo 'finished setting up'$(hostname)
+echo 'finished setting up' $(hostname)
